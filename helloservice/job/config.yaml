@@ -5,6 +5,13 @@ actions:
       - name: "sh.keptn.event.deployment.triggered"
     tasks:
       - name: "Run helm"
+        files:
+          - /helm-charts
+        env:
+          - name: IMAGE
+            value: "$.data.configurationChange.values.image"
+            valueFrom: event
         image: "alpine/helm:3.7.2"
         serviceAccount: "jes-deploy-using-helm"
-        cmd: ["echo"]
+        cmd: ["helm"]
+        args: ["upgrade", "--create-namespace", "--install", "-n", "mysample", "helloservice", "/keptn/helm-charts", "--set", "image=$(IMAGE)", "--wait"]
