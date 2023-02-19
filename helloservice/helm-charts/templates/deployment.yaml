@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: helloservice
   namespace: {{ .Release.Namespace }} 
@@ -23,3 +23,11 @@ spec:
         env:
         - name: PORT
           value: "9000"
+  strategy:
+    canary: #Indicates that the rollout should use the Canary strategy
+      steps:
+      - setWeight: 10
+      - pause:
+          duration: 10s # 1 hour
+      - setWeight: 20
+      - pause: {} # pause indefinitely
