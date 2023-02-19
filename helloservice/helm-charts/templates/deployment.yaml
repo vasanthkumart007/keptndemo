@@ -29,5 +29,5 @@ spec:
       - setWeight: 10
       - pause:
           duration: 10s # 1 hour
-      - setWeight: 20
+      - setWeight: 70
       - pause: {} # pause indefinitely
