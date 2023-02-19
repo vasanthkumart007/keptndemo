@@ -2,7 +2,7 @@ apiVersion: v2
 actions:
   - name: "Deploy using helm"
     events:
-      - name: "sh.keptn.event.hardening.deployment.triggered"
+      - name: "sh.keptn.event.deployment.triggered"
     tasks:
       - name: "Run helm"
         files:
