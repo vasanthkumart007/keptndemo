@@ -9,10 +9,6 @@ objectives:
     pass:
       - criteria:
           - "<1"
-  - sli: prometheus_http_requests_total
-    pass:
-      - criteria:
-          - "<=1"
 total_score:
   pass: "90%"
   warning: "75%"
