@@ -12,3 +12,5 @@ spec:
               properties:
                 deploymentstrategy: "blue_green_service"
             - name: "evaluation"
+              properties:
+                timeframe: "2m"
