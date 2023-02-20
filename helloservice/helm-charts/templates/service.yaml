@@ -8,7 +8,7 @@ spec:
     app: helloservice
   ports:
   - name: http
-    port: 80
+    port: 4000
     protocol: TCP
-    targetPort: 9000
+    targetPort: 4000
   type: LoadBalancer

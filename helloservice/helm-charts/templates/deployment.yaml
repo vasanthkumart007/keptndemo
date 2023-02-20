@@ -19,10 +19,10 @@ spec:
         image: {{ .Values.image}}
         imagePullPolicy: Always
         ports:
-        - containerPort: 9000
+        - containerPort: 4000
         env:
         - name: PORT
-          value: "9000"
+          value: "4000"
   strategy:
      canary:
        steps:
