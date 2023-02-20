@@ -16,13 +16,13 @@ actions:
         cmd: ["helm"]
         args: ["upgrade", "--create-namespace", "--install", "-n", "mysample", "helloservice", "/keptn/helm-charts", "--set", "image=$(IMAGE)", "--wait"]
   
-  - name: "Promote phased argo rollouts"
-    events:
-      - name: "sh.keptn.event.release.triggered"
-    tasks:
-      - name: "Run argo rollouts in phased manner"
-        image: "alpine/k8s"
-        serviceAccount: "jes-deploy-using-helm"
-        cmd: ["sh"]
-        args: ["-c", "curl -LO https://github.com/argoproj/argo-rollouts/releases/latest/download/kubectl-argo-rollouts-linux-amd64; chmod +x ./kubectl-argo-rollouts-linux-amd64; sudo mv ./kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts; kubectl argo rollouts promote helloservice -n mysample"]
+  # - name: "Promote phased argo rollouts"
+  #   events:
+  #     - name: "sh.keptn.event.release.triggered"
+  #   tasks:
+  #     - name: "Run argo rollouts in phased manner"
+  #       image: "alpine/k8s"
+  #       serviceAccount: "jes-deploy-using-helm"
+  #       cmd: ["sh"]
+  #       args: ["-c", "curl -LO https://github.com/argoproj/argo-rollouts/releases/latest/download/kubectl-argo-rollouts-linux-amd64; chmod +x ./kubectl-argo-rollouts-linux-amd64; sudo mv ./kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts; kubectl argo rollouts promote helloservice -n mysample"]
         
