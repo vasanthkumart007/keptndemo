@@ -26,10 +26,6 @@ spec:
                   result: "pass"
           tasks:
           - name: release
-          # - name: test
-          #   properties:
-          #     teststrategy: real-user
-          #     canarywaitduration: 2m
           - name: "evaluation"
               properties:
                 timeframe: "2m"
@@ -46,10 +42,6 @@ spec:
                   result: "pass"
           tasks:
           - name: release
-          # - name: test
-          #   properties:
-          #     teststrategy: real-user
-          #     canarywaitduration: 2m
           - name: "evaluation"
               properties:
                 timeframe: "2m"
@@ -66,10 +58,6 @@ spec:
                   result: "pass"
           tasks:
           - name: release
-          # - name: test
-          #   properties:
-          #     teststrategy: real-user
-          #     canarywaitduration: 2m
           - name: "evaluation"
               properties:
                 timeframe: "2m"
