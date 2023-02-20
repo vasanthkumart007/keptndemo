@@ -10,7 +10,70 @@ spec:
           tasks:
             - name: "deployment"
               properties:
-                deploymentstrategy: "blue_green_service"
+                deploymentstrategy: user_managed
             - name: "evaluation"
               properties:
                 timeframe: "2m"
+            - name: approval
+              properties:
+                pass: manual
+                warning: manual
+        - name: canaryphase1
+          triggeredOn:
+            - event: hardening.delivery.finished
+              selector:
+                match:
+                  result: "pass"
+          tasks:
+          - name: release
+          # - name: test
+          #   properties:
+          #     teststrategy: real-user
+          #     canarywaitduration: 2m
+          - name: "evaluation"
+              properties:
+                timeframe: "2m"
+          - name: approval
+            properties:
+              pass: automatic
+              warning: manual
+        
+        - name: canaryphase2
+          triggeredOn:
+            - event: hardening.canaryphase1.finished
+              selector:
+                match:
+                  result: "pass"
+          tasks:
+          - name: release
+          # - name: test
+          #   properties:
+          #     teststrategy: real-user
+          #     canarywaitduration: 2m
+          - name: "evaluation"
+              properties:
+                timeframe: "2m"
+          - name: approval
+            properties:
+              pass: automatic
+              warning: manual
+        
+        - name: canaryphase3
+          triggeredOn:
+            - event: hardening.canaryphase2.finished
+              selector:
+                match:
+                  result: "pass"
+          tasks:
+          - name: release
+          # - name: test
+          #   properties:
+          #     teststrategy: real-user
+          #     canarywaitduration: 2m
+          - name: "evaluation"
+              properties:
+                timeframe: "2m"
+          - name: approval
+            properties:
+              pass: automatic
+              warning: manual
