@@ -15,3 +15,13 @@ actions:
         serviceAccount: "jes-deploy-using-helm"
         cmd: ["helm"]
         args: ["upgrade", "--create-namespace", "--install", "-n", "mysample", "helloservice", "/keptn/helm-charts", "--set", "image=$(IMAGE)", "--wait"]
+  
+  - name: "Promote phased argo rollouts"
+    events:
+      - name: "sh.keptn.event.release.triggered"
+    tasks:
+      - name: "Run argo rollouts in phased manner"
+        image: "alpine/k8s:1.20.15"
+        serviceAccount: "jes-deploy-using-helm"
+        cmd: ["sh"]
+        args: ["-c", "kubectl argo rollouts promote helloservice -n mysample"]
