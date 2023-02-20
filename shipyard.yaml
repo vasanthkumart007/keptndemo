@@ -11,4 +11,4 @@ spec:
             - name: "deployment"
               properties:
                 deploymentstrategy: "blue_green_service"
-        - name: "evaluation"
+            - name: "evaluation"
