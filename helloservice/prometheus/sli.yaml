@@ -2,3 +2,4 @@
 spec_version: '1.0'
 indicators:
   failing_request: promhttp_metric_handler_requests_total{code="500",job="prometheus"}
+  prometheus_http_requests_total: prometheus_http_requests_total{code!="200",handler="/"}
