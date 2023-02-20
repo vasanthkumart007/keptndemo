@@ -27,8 +27,8 @@ spec:
           tasks:
           - name: release
           - name: "evaluation"
-              properties:
-                timeframe: "2m"
+            properties:
+              timeframe: "2m"
           - name: approval
             properties:
               pass: automatic
@@ -43,8 +43,8 @@ spec:
           tasks:
           - name: release
           - name: "evaluation"
-              properties:
-                timeframe: "2m"
+            properties:
+              timeframe: "2m"
           - name: approval
             properties:
               pass: automatic
@@ -59,8 +59,8 @@ spec:
           tasks:
           - name: release
           - name: "evaluation"
-              properties:
-                timeframe: "2m"
+            properties:
+              timeframe: "2m"
           - name: approval
             properties:
               pass: automatic
