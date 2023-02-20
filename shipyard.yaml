@@ -47,7 +47,7 @@ spec:
               timeframe: "2m"
           - name: approval
             properties:
-              pass: manuals
+              pass: manual
               warning: manual
         
         - name: 100 %
