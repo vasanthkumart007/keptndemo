@@ -18,7 +18,7 @@ spec:
               properties:
                 pass: manual
                 warning: manual
-        - name: 50 %
+        - name: 50%
           triggeredOn:
             - event: hardening.delivery.finished
               selector:
@@ -34,9 +34,9 @@ spec:
               pass: manual
               warning: manual
         
-        - name: 75 %
+        - name: 75%
           triggeredOn:
-            - event: hardening.canaryphase1.finished
+            - event: hardening.50%.finished
               selector:
                 match:
                   result: "pass"
@@ -50,9 +50,9 @@ spec:
               pass: manual
               warning: manual
         
-        - name: 100 %
+        - name: 100%
           triggeredOn:
-            - event: hardening.canaryphase2.finished
+            - event: hardening.75%.finished
               selector:
                 match:
                   result: "pass"
