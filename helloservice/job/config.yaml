@@ -25,4 +25,4 @@ actions:
         serviceAccount: "jes-deploy-using-helm"
         cmd: ["sh"]
         args: ["-c", "kubectl argo rollouts promote helloservice -n mysample"]
-        # args: ["-c","sleep 3000"]
+        
