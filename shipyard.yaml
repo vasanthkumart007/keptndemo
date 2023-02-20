@@ -31,7 +31,7 @@ spec:
               timeframe: "2m"
           - name: approval
             properties:
-              pass: automatic
+              pass: manual
               warning: manual
         
         - name: canaryphase2
@@ -47,7 +47,7 @@ spec:
               timeframe: "2m"
           - name: approval
             properties:
-              pass: automatic
+              pass: manuals
               warning: manual
         
         - name: canaryphase3
@@ -61,7 +61,4 @@ spec:
           - name: "evaluation"
             properties:
               timeframe: "2m"
-          - name: approval
-            properties:
-              pass: automatic
-              warning: manual
+          
